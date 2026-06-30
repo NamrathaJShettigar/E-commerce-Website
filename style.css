@@ -59,7 +59,7 @@ button {
     font-family: Lato, cursive;
 }
 
-button:hover {
+.search-box button:hover {
     background-color: #ba922c;
 }
 
@@ -115,6 +115,10 @@ h2 {
     width: 100%;
 }
 
+.product-card button:hover {
+    background-color: #5fc47a;
+}
+
 @media(max-width:992px) {
     nav {
         gap: 20px;
@@ -146,4 +150,29 @@ h2 {
     .products{
         grid-template-columns: 1fr;
     }
+}
+
+.hero {
+    padding: 80px 20px;
+    background-color: #f8f9fa;
+    background-image:url("images/banner.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size:40px;
+    margin-bottom: 20px;
+}
+
+.hero-content button {
+    padding: 15px 30px;
+}
+
+.hero-content button:hover{
+    background-color: green;
 }
