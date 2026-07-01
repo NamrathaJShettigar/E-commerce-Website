@@ -50,17 +50,20 @@ input[type="text"] {
 }
 
 button {
-    padding: 10px 20px;
+    padding: 12px 24px;
     background-color: #3897d6;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-family: Lato, cursive;
+    transition: all 0.3s;
 }
 
 .search-box button:hover {
-    background-color: #ba922c;
+    background-color: rgb(40, 107, 174);
+    
+    transform: translateY(-2px);
 }
 
 .search-box {
@@ -75,6 +78,7 @@ button {
 
 .search-box button{
     white-space: nowrap;
+    padding: 10px 20px;
 }
 
 h2 {
@@ -89,8 +93,8 @@ h2 {
     text-align: center;
     width: 200px;
     margin: 20px auto;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
 }
 
 .product-img {
@@ -101,8 +105,9 @@ h2 {
 }
 
 .product-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-10px) scale(1.05);
     cursor: pointer;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .products {
@@ -170,9 +175,17 @@ h2 {
 }
 
 .hero-content button {
-    padding: 15px 30px;
+    padding: 12px 24px;
+    transition: all 0.3s;
 }
 
 .hero-content button:hover{
-    background-color: green;
+    background-color: rgb(40, 107, 174);
+    transform: translateY(-2px);
+}
+
+footer{
+    background-color: #e1c9de;
+    padding: 10px;
+    text-align: center;
 }
