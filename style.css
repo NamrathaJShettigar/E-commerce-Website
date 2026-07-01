@@ -60,11 +60,7 @@ button {
     transition: all 0.3s;
 }
 
-.search-box button:hover {
-    background-color: rgb(40, 107, 174);
-    
-    transform: translateY(-2px);
-}
+
 
 .search-box {
     display: flex;
@@ -104,10 +100,8 @@ h2 {
     border-radius: 5px;
 }
 
-.product-card:hover {
-    transform: translateY(-10px) scale(1.05);
-    cursor: pointer;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.product-card button:hover {
+    background-color: rgb(40, 107, 174);
 }
 
 .products {
@@ -120,9 +114,6 @@ h2 {
     width: 100%;
 }
 
-.product-card button:hover {
-    background-color: #5fc47a;
-}
 
 @media(max-width:992px) {
     nav {
@@ -182,6 +173,26 @@ h2 {
 .hero-content button:hover{
     background-color: rgb(40, 107, 174);
     transform: translateY(-2px);
+}
+
+
+@media (hover:hover){
+
+    .search-box button:hover {
+    background-color: rgb(40, 107, 174);
+    transform: translateY(-2px);
+    }
+    
+    .product-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    cursor: pointer;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-content button:hover{
+    background-color: rgb(40, 107, 174);
+    transform: translateY(-2px);
+    }
 }
 
 footer{
