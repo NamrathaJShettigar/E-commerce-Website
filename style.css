@@ -67,8 +67,6 @@ a:hover{
     color: var(--nav-list-hover);
 }
 
-
-
 input[type="text"] {
     padding: 10px;
     border: 1px solid #090202;
@@ -81,6 +79,8 @@ input[type="text"] {
     display: flex;
     gap: 10px;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .search-box input[type="text"] {
@@ -96,6 +96,7 @@ input[type="text"] {
 .fa-cart-shopping {
     font-size: 24px;
     color: var(--button-color);
+    white-space: nowrap;
     cursor: pointer;
     transition: all 0.3s;
 }
@@ -202,7 +203,7 @@ h2 {
     transform: translateY(-3px);
 }
 
-@media(max-width:992px) {
+@media(max-width:1100px) {
     nav {
         gap: 20px;
         justify-content: center;
