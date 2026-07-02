@@ -1,7 +1,7 @@
 .logo {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: bold;
-    font-family: Lato, cursive;
+    /*font-family: Lato, cursive;*/
 }
 
 .logo:hover{
@@ -20,9 +20,15 @@ nav {
     gap: 10px;
 }
 
+/*
 body{
     background-color: white;
     font-family: Lato, cursive;
+}
+*/
+
+body{
+    font-family: "Poppins", sans-serif;
 }
 
 ul {
@@ -148,12 +154,43 @@ h2 {
     }
 }
 
+@media(max-width:400px){
+    nav{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    ul{
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+
+    }
+    .search-box{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    input[type="text"]{
+        width: 90%;
+    }
+    button{
+        width:100px;
+    }
+    .products{
+        grid-template-columns: 1fr;
+    }
+}
+
 .hero {
     padding: 80px 20px;
     background-color: #f8f9fa;
     background-image:url("images/banner.jpg");
     background-size: cover;
     background-position: center;
+    margin-top: 10px;
+    border-radius: 5px;
 }
 
 .hero-content {
@@ -162,12 +199,13 @@ h2 {
 
 .hero-content h1 {
     font-size:40px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .hero-content button {
     padding: 12px 24px;
     transition: all 0.3s;
+    margin-top: 10px;
 }
 
 
@@ -194,4 +232,5 @@ footer{
     background-color: #e1c9de;
     padding: 10px;
     text-align: center;
+    border-radius: 5px;
 }
