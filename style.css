@@ -1,11 +1,39 @@
+:root {
+    --logo-color: rgb(87, 38, 99);
+    --logo-hover: rgb(79, 19, 103);
+    --background-color: rgb(239, 236, 236);
+    --text-color: #333333;
+    --nav-background: #e1c9de;
+    --nav-list-hover:rgb(0, 0, 0); 
+    --button-color: #3897d6;
+    --button-hover:  rgb(40, 107, 174);
+    --button-text-color: #ffffff;
+    --product-card-background: #ffffff;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+button {
+    padding: 12px 24px;
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
 .logo {
     font-size: 32px;
     font-weight: bold;
-    /*font-family: Lato, cursive;*/
+    color: var(--logo-color);
 }
 
 .logo:hover{
-        color: rgb(9, 203, 9);
+        color: var(--logo-hover);
 }
 
 nav {
@@ -14,22 +42,13 @@ nav {
     align-items: center;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(178, 76, 76, 0.1);
-    background-color: #e1c9de;
-    border-radius: 5px;
+    background-color: var(--nav-background); 
+    background: linear-gradient(to right, var(--nav-background), #cc95b0);
+    border-radius: 8px;
     flex-wrap: wrap;
     gap: 10px;
 }
 
-/*
-body{
-    background-color: white;
-    font-family: Lato, cursive;
-}
-*/
-
-body{
-    font-family: "Poppins", sans-serif;
-}
 
 ul {
     display: flex;
@@ -39,34 +58,24 @@ ul {
     padding: 0;
 }
 
-a:hover{
-    color: rgb(82, 79, 179);
-}
-
 a{
     text-decoration: none;
+    color: var(--text-color);
 }
+
+a:hover{
+    color: var(--nav-list-hover);
+}
+
+
 
 input[type="text"] {
     padding: 10px;
     border: 1px solid #090202;
-    border-radius: 5px;
+    border-radius: 8px;
     width: 300px;
     max-width:90%;
 }
-
-button {
-    padding: 12px 24px;
-    background-color: #3897d6;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: Lato, cursive;
-    transition: all 0.3s;
-}
-
-
 
 .search-box {
     display: flex;
@@ -75,39 +84,58 @@ button {
 }
 
 .search-box input[type="text"] {
-    width: 200px;
+    width: 220px;
 }
 
 .search-box button{
     white-space: nowrap;
     padding: 10px 20px;
+    background-color: var(--button-color);
 }
+
+.fa-cart-shopping {
+    font-size: 24px;
+    color: var(--button-color);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.fa-cart-shopping:hover {
+    color: var(--button-hover);
+    transform: translateY(-2px) scale(1.1);
+}
+
+.hero {
+    padding: 80px 20px;
+    background-image:url("images/banner.jpg");
+    background-size: cover;
+    background-position: center;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size:40px;
+    margin-bottom: 10px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.hero-content button {
+    padding: 12px 24px;
+    transition: all 0.3s;
+    margin-top: 10px;
+    background-color: var(--button-color);
+}
+
 
 h2 {
     text-align: center;
     margin: 40px;
-}
-
-.product-card {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    text-align: center;
-    width: 200px;
-    margin: 20px auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s;
-}
-
-.product-img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-.product-card button:hover {
-    background-color: rgb(40, 107, 174);
 }
 
 .products {
@@ -116,10 +144,63 @@ h2 {
     gap: 20px;
 }
 
-.product-card button {
-    width: 100%;
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 24px;
+    text-align: center;
+    width: 200px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    background-color: var(--product-card-background);
 }
 
+.product-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.product-card button:hover {
+    background-color: var(--button-hover);
+}
+
+.product-card button {
+    width: 100%;
+    background-color: var(--button-color);
+}
+
+.footer {
+    background-color: #1f2937;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.footer-links a{
+    color:white;
+    text-decoration:none;
+    margin:0;
+    padding:0 20px;
+}
+
+.footer-links a:hover{
+    text-decoration: underline;
+}
+
+.footer-social i{
+    font-size: 24px;
+    margin: 15px 10px;
+    color: white;
+    transition: all 0.3s;
+}
+
+.footer-social i:hover{
+    color: white;
+    transform: translateY(-3px);
+}
 
 @media(max-width:992px) {
     nav {
@@ -183,36 +264,10 @@ h2 {
     }
 }
 
-.hero {
-    padding: 80px 20px;
-    background-color: #f8f9fa;
-    background-image:url("images/banner.jpg");
-    background-size: cover;
-    background-position: center;
-    margin-top: 10px;
-    border-radius: 5px;
-}
-
-.hero-content {
-    text-align: center;
-}
-
-.hero-content h1 {
-    font-size:40px;
-    margin-bottom: 10px;
-}
-
-.hero-content button {
-    padding: 12px 24px;
-    transition: all 0.3s;
-    margin-top: 10px;
-}
-
-
 @media (hover:hover){
 
     .search-box button:hover {
-    background-color: rgb(40, 107, 174);
+    background-color:  var(--button-hover);
     transform: translateY(-2px);
     }
     
@@ -223,14 +278,7 @@ h2 {
     }
 
     .hero-content button:hover{
-    background-color: rgb(40, 107, 174);
+    background-color: var(--button-hover);
     transform: translateY(-2px);
     }
-}
-
-footer{
-    background-color: #e1c9de;
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px;
 }
