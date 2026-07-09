@@ -177,6 +177,14 @@ h2 {
     background-color: var(--button-color);
 }
 
+#about, #contact {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin: 20px auto;
+
+}
 .footer {
     background-color: #1f2937;
     color: white;
@@ -291,4 +299,11 @@ h2 {
     background-color: var(--button-hover);
     transform: translateY(-2px);
     }
+}
+
+.highlight {
+    color: white;
+    background-color: #6a1b9a;
+    padding: 10px;
+    border-radius: 10px;
 }
