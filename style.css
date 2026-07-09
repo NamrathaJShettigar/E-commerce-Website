@@ -11,6 +11,10 @@
     --product-card-background: #ffffff;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     font-family: "Poppins", sans-serif;
     background-color: var(--background-color);

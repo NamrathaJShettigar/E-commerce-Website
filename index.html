@@ -14,10 +14,10 @@
     <nav>
         <a href="#" class="logo">ShopEase</a>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="search-box">
             <input type="text" placeholder="Search products...">
@@ -25,44 +25,54 @@
             <i class="fa-solid fa-cart-shopping"></i>
         </div>
     </nav>
-    <section class="hero">
+    <section class="hero" id = "home">
         <div class="hero-content">
             <h1>Welcome to ShopEase</h1>
             <p>Discover amazing products at unbeatable prices!</p>
-            <button>Shop now</button>
+            <button class = "shop-btn">Shop now</button>
         </div>
-   </section>
-   <h2>Featured Products</h2>
-    <div class="products">
-        <div class="product-card">
-            <img src="images/shoe.jpg" class="product-img" alt="Nike Shoes">
-            <h3>Nike Shoes</h3>
-            <p>⭐⭐⭐⭐</p>
-            <p>$299</p>
-            <button>Add to Cart</button>
+    </section>
+    <section id = "products">
+        <h2>Featured Products</h2>
+        <div class="products">
+            <div class="product-card">
+                <img src="images/shoe.jpg" class="product-img" alt="Nike Shoes">
+                <h3>Nike Shoes</h3>
+                <p>⭐⭐⭐⭐</p>
+                <p>$299</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/headphone.jpg" class="product-img" alt="Headphone">
+                <h3>Headphone</h3>
+                <p>⭐⭐⭐</p>
+                <p>$99</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/laptop.png" class="product-img" alt="Acer Laptop">
+                <h3>Acer Laptop</h3>
+                <p>⭐⭐⭐⭐</p>
+                <p>$349</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/iphone.jpg" class="product-img" alt="Apple iPhone">
+                <h3>Apple iPhone</h3>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>$1229</p>
+                <button>Add to Cart</button>
+            </div>
         </div>
-        <div class="product-card">
-            <img src="images/headphone.jpg" class="product-img" alt="Headphone">
-            <h3>Headphone</h3>
-            <p>⭐⭐⭐</p>
-            <p>$99</p>
-            <button>Add to Cart</button>
-        </div>
-        <div class="product-card">
-            <img src="images/laptop.png" class="product-img" alt="Acer Laptop">
-            <h3>Acer Laptop</h3>
-            <p>⭐⭐⭐⭐</p>
-            <p>$349</p>
-            <button>Add to Cart</button>
-        </div>
-        <div class="product-card">
-            <img src="images/iphone.jpg" class="product-img" alt="Apple iPhone">
-            <h3>Apple iPhone</h3>
-            <p>⭐⭐⭐⭐⭐</p>
-            <p>$1229</p>
-            <button>Add to Cart</button>
-        </div>
-    </div>
+    </section>
+    <section id = "about">
+        <h2>About Us</h2>
+        <p>Welcome to ShopEase, your one-stop destination for all your shopping needs. We strive to provide the best products at the most competitive prices.</p>
+    </section>
+    <section id = "contact">
+        <h2>Contact</h2>
+        <p>Email: support@shopease.com</p>
+    </section>
     <footer class="footer">
         <div class="footer-logo">
             <h2>ShopEase</h2>
@@ -81,5 +91,6 @@
         </div>
         <p class="copyright">&copy; 2026 ShopEase. All Rights Reserved.</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
