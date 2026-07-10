@@ -47,3 +47,31 @@ shopbutton.addEventListener("click", function () {
     heading.classList.toggle("highlight");
 });
 */
+
+let products = [
+    "Nike Shoes",
+    "Headphone",
+    "Acer Laptop",
+    "Apple iPhone"
+];
+// products[1] = "Airpods"; Modyifying array
+
+// products.push("Galaxy watch"); Adding new elmnts
+console.log(products);
+console.log(products.length);
+
+for(let i=0; i<products.length; i++){
+    console.log(products[i]);
+}
+
+let searchInput = document.querySelector(".search-input");
+let searchButton = document.querySelector(".search-btn");
+
+searchButton.addEventListener("click", function() {
+    let userSearch = searchInput.value.toLowerCase();
+    for(let i=0; i<products.length; i++){
+        if (products[i].toLowerCase() === userSearch) {
+            console.log("Product found!");
+        }
+    }
+});
