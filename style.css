@@ -307,3 +307,17 @@ h2 {
     padding: 10px;
     border-radius: 10px;
 }
+
+.remove-btn{
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: crimson;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.remove-btn:hover{
+    background-color: darkred;
+}
