@@ -40,6 +40,8 @@ let shopButton = document.querySelector(".shop-btn");
 
 let productsSection = document.querySelector("#products");
 
+let productCards = document.querySelectorAll(".product-card");
+
 
 // ==========================
 // DISPLAY CART FUNCTION
@@ -137,10 +139,20 @@ cartButtons.forEach(function(button) {
 // ==========================
 
 searchButton.addEventListener("click", function() {
+
     let userSearch = searchInput.value.toLowerCase();
-    for(let i = 0; i < products.length; i++){
-        if (products[i].toLowerCase() === userSearch) {
-            console.log("Product found!");
+
+    productCards.forEach(function(card) {
+
+        let productName = card.querySelector("h3").textContent.toLowerCase();
+
+        if (productName.includes(userSearch)) {
+
+            card.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
         }
-    }
+    });
 });
