@@ -1,8 +1,102 @@
+//==========================
+// CART VARIABLES
+//==========================
+
 let cart = [];
+
+let cartList = document.querySelector("#cart-list");
+
+let cartButtons = document.querySelectorAll(".product-card button");
+
+let cartCount = document.querySelector(".cart-count");
+
+
+//==========================
+// SEARCH VARIABLES
+//==========================
+
+let searchInput = document.querySelector(".search-input");
+
+let searchButton = document.querySelector(".search-btn");
+
+
+//==========================
+// PRODUCTS
+//==========================
+
+let products = [
+    "Nike Shoes",
+    "Headphone",
+    "Acer Laptop",
+    "Apple iPhone"
+];
+
+
+//==========================
+// SHOP NOW BUTTON
+//==========================
 
 let shopButton = document.querySelector(".shop-btn");
 
 let productsSection = document.querySelector("#products");
+
+
+// ==========================
+// DISPLAY CART FUNCTION
+// ==========================
+
+function displayCart() {
+    cartList.innerHTML = "";
+
+    if(cart.length === 0){
+        cartList.innerHTML = "<li>Your cart is empty.</li>";
+        return;
+    }
+
+    for(let i = 0; i < cart.length; i++){
+        cartList.innerHTML += `
+        <li>
+            ${cart[i]}
+            <button class = "remove-btn" data-index = "${i}">
+                Remove
+            </button>
+        </li>
+        `;
+    }
+    let removeButtons = document.querySelectorAll(".remove-btn");
+
+    removeButtons.forEach(function(button){
+        button.addEventListener("click",function(){
+            let productIndex = button.dataset.index;
+            
+            cart.splice(productIndex, 1);
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+            
+            cartCount.textContent = cart.length;
+
+            displayCart();
+        });
+    });
+}
+
+
+//==========================
+//LOAD CART FROM LOCAL STORAGE
+//==========================
+
+let savedCart = JSON.parse(localStorage.getItem("cart"));
+
+if (savedCart !== null) {
+    cart = savedCart;
+    cartCount.textContent = cart.length;
+    displayCart();
+}
+
+
+// ==========================
+// SHOP NOW EVENT
+// ==========================
 
 shopButton.addEventListener("click", function() {
     productsSection.scrollIntoView({
@@ -10,40 +104,24 @@ shopButton.addEventListener("click", function() {
     });
 });
 
-let cartList = document.querySelector("#cart-list");
 
-let cartButtons = document.querySelectorAll(".product-card button");
-
-let cartCount=document.querySelector(".cart-count");
-
-let count= 0;
-
-function displayCart() {
-    cartList.innerHTML = "";
-
-        for(let i=0;i<cart.length;i++){
-            cartList.innerHTML += `
-            <li>
-                ${cart[i]}
-                <button class = "remove-btn">Remove</button>
-            </li>
-            `;
-        }
-}
+// ==========================
+// ADD TO CART EVENT
+// ==========================
 
 cartButtons.forEach(function(button) {
     button.addEventListener("click", function(){
         let productName = button.parentElement.querySelector("h3").textContent;
+
         if(!cart.includes(productName)){
             cart.push(productName);
 
-            count++;
-            cartCount.textContent = count;
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            cartCount.textContent = cart.length;
+
             displayCart();
         }
-        
-        console.log(cart);
-
         
         button.textContent = "Added to Cart";
 
@@ -52,56 +130,17 @@ cartButtons.forEach(function(button) {
         }, 2000);
     }); 
 });
-/*
-let heading = document.querySelector("h1");
-heading.textContent = "Welcome back to ShopEase";
 
-let heroheading = document.querySelector(".hero-content h1");
-heroheading.style.color =  "purple";
 
-let herohead = document.querySelector(".hero-content h1");
-
-herohead.classList.add("highlight");
-
-herohead.classList.remove("highlight");
-
-herohead.classList.toggle("highlight");
-
-let heading = document.querySelector(".hero-content h1");
-let shopbutton = document.querySelector(".shop-btn");
-
-shopbutton.addEventListener("click", function () {
-    heading.classList.toggle("highlight");
-});
-*/
-
-let products = [
-    "Nike Shoes",
-    "Headphone",
-    "Acer Laptop",
-    "Apple iPhone"
-];
-// products[1] = "Airpods"; Modyifying array
-
-// products.push("Galaxy watch"); Adding new elmnts
-console.log(products);
-console.log(products.length);
-
-for(let i=0; i<products.length; i++){
-    console.log(products[i]);
-}
-
-let searchInput = document.querySelector(".search-input");
-let searchButton = document.querySelector(".search-btn");
+// ==========================
+// SEARCH EVENT
+// ==========================
 
 searchButton.addEventListener("click", function() {
     let userSearch = searchInput.value.toLowerCase();
-    for(let i=0; i<products.length; i++){
+    for(let i = 0; i < products.length; i++){
         if (products[i].toLowerCase() === userSearch) {
             console.log("Product found!");
         }
     }
 });
-
-
-
