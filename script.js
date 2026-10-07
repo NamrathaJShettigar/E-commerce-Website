@@ -19,6 +19,10 @@ let searchInput = document.querySelector(".search-input");
 
 let searchButton = document.querySelector(".search-btn");
 
+//========================= 
+// QUANTITY VARIABLES
+//=========================
+let quantity = document.querySelector(".quantity");
 
 //==========================
 // PRODUCTS
@@ -113,14 +117,38 @@ shopButton.addEventListener("click", function() {
 
 cartButtons.forEach(function(button) {
     button.addEventListener("click", function(){
-        let productName = button.parentElement.querySelector("h3").textContent;
+        let productName = button.dataset.productname;
+        let price = button.dataset.price;
+        let image = button.dataset.image;
+
+        let product = {
+            name: productName,
+            price: price,
+            image: image,
+            quantity: 1
+        };
+
+        let existingProduct = cart.find(function(item) {
+            return item.name === productName;
+        });
+
+        if(existingProduct) {
+            existingProduct.quantity ++;
+        } else {
+            cart.push(product);
+        }
+
+        let totalItems = 0;
+        for(let i = 0; i < cart.length; i++) {
+            totalItems += cart[i].quantity;
+        }
 
         if(!cart.includes(productName)){
-            cart.push(productName);
+            cart.push(product);
 
             localStorage.setItem("cart", JSON.stringify(cart));
 
-            cartCount.textContent = cart.length;
+            cartCount.textContent = totalItems;
 
             displayCart();
         }
@@ -156,3 +184,8 @@ searchButton.addEventListener("click", function() {
         }
     });
 });
+
+// ==========================
+// UPDATING CODE
+// ==========================
+

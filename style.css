@@ -110,6 +110,10 @@ input[type="text"] {
     transform: translateY(-2px) scale(1.1);
 }
 
+/* ===========================
+HERO STYLES
+=========================== */
+
 .hero {
     padding: 80px 20px;
     background-image:url("images/banner.jpg");
@@ -130,11 +134,14 @@ input[type="text"] {
     margin: auto;
 }
 
-.hero-content button {
+.hero-content a {
     padding: 12px 24px;
     transition: all 0.3s;
     margin-top: 10px;
     background-color: var(--button-color);
+    color: var(--button-text-color);
+    border-radius: 8px;
+    display: inline-block;
 }
 
 
@@ -163,7 +170,7 @@ h2 {
 
 .product-img {
     width: 100%;
-    height: 180px;
+    height: 200px;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -177,34 +184,50 @@ h2 {
     background-color: var(--button-color);
 }
 
-#about, #contact {
-    padding: 40px 20px;
-    text-align: center;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    margin: 20px auto;
+/* ==========================
+FOOTER STYLES
+========================== */
 
-}
 .footer {
     background-color: #1f2937;
-    color: white;
+    color: rgb(238, 232, 232);
     text-align: center;
-    padding: 40px 20px;
+    padding: 40px 20px;    
 }
 
-.footer-links a{
+.footer-content {
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin: 20px 0;
-    color:white;
-    text-decoration:none;
-    margin:0;
-    padding:0 20px;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.footer-content div {
+    flex: 1;
+}
+
+.footer h3 {
+    margin-bottom: 20px;
+}
+
+.footer a{
+    color: white;
+    text-decoration: none;
+}
+
+.footer-contact a{
+    display: block;
     margin-bottom: 10px;
 }
 
-.footer-links a:hover{
+.footer-links a{
+    display: block;
+    color:white;
+    text-decoration:none;
+    margin-bottom: 10px;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover{
     text-decoration: underline;
 }
 
@@ -216,8 +239,14 @@ h2 {
 }
 
 .footer-social i:hover{
-    color: white;
+    color: #8b5cf6;
     transform: translateY(-3px);
+}
+
+.copyright {
+    border-top: white solid 1px;
+    padding-top: 20px;
+    margin-top: 20px;
 }
 
 @media(max-width:1100px) {
@@ -251,7 +280,11 @@ h2 {
     .products{
         grid-template-columns: 1fr;
     }
+    .footer-content{
+        flex-direction: column;
+    }
 }
+
 
 @media(max-width:400px){
     nav{
@@ -443,3 +476,19 @@ h2 {
         width:100%;
     }
 }
+
+#about, #contact {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin: 20px auto;
+
+}
+
+#contact ul{
+    display:flex;
+    justify-content:center;
+    gap:60px;
+}
+
